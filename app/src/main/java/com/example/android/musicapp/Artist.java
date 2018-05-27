@@ -29,6 +29,4 @@ public class Artist implements Serializable{
         mSongList = songList;
     }
 
-
-
 }
