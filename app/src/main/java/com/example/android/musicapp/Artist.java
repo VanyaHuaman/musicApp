@@ -1,9 +1,10 @@
 package com.example.android.musicapp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Artist {
+public class Artist implements Serializable{
 
     private String mArtistName;
     private ArrayList<Song> mSongList;
@@ -21,7 +22,7 @@ public class Artist {
         mArtistName = artistName;
     }
 
-    public List<Song> getSongList() {
+    public ArrayList<Song> getSongList() {
         return mSongList;
     }
 

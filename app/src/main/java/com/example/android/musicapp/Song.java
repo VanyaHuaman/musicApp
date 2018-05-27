@@ -1,6 +1,8 @@
 package com.example.android.musicapp;
 
-public class Song {
+import java.io.Serializable;
+
+public class Song implements Serializable{
     private String mSongName;
     private String mArtist;
     private String mSongYear;

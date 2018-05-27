@@ -1,5 +1,6 @@
 package com.example.android.musicapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +23,7 @@ public class ArtistActivity extends AppCompatActivity {
         /*
          **String Array with 32 Frank Sinatra Songs
          */
-        List<String> songArray = Arrays.asList("My Way", "Fly Me to the Moon", "New York, New York",
+         List<String> songArray = Arrays.asList("My Way", "Fly Me to the Moon", "New York, New York",
                 "I've Got You Under My Skin", "The Way You Look Tonight", "Somethin' Stupid",
                 "The Girl from Ipanema", "One for My Baby", "Strangers in the Night",
                 "My Funny Valentine", "Young at Heart", "I've Got The World On A String",
@@ -46,7 +47,7 @@ public class ArtistActivity extends AppCompatActivity {
 
         Artist frankSinatra = new Artist(artist,songs);
 
-        ArrayList<Artist> artistArray = new ArrayList<Artist>();
+        final ArrayList<Artist> artistArray = new ArrayList<Artist>();
         artistArray.add(frankSinatra);
 
         ArtistAdapter adapter = new ArtistAdapter(this,artistArray);
@@ -59,9 +60,16 @@ public class ArtistActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent artistSongsIntent = new Intent(ArtistActivity.this,SongActivity.class);
+
+                ArrayList<Song> songArray = artistArray.get(i).getSongList();
+                artistSongsIntent.putExtra("array", songArray);
+
                 startActivity(artistSongsIntent);
             }
         });
 
     }
+
+
+
 }
