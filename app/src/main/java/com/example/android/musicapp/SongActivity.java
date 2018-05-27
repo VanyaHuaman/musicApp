@@ -1,6 +1,5 @@
 package com.example.android.musicapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class SongActivity extends AppCompatActivity {
 
@@ -24,8 +21,7 @@ public class SongActivity extends AppCompatActivity {
         Intent receivedIntent = getIntent();
 
         @SuppressWarnings({"unchecked"})
-        ArrayList<Song> artistSongArray = new ArrayList<Song>();
-        artistSongArray = (ArrayList<Song>) receivedIntent.getSerializableExtra("array");
+        final ArrayList<Song> artistSongArray = (ArrayList<Song>) receivedIntent.getSerializableExtra("array");
 
         SongAdapter adapter = new SongAdapter(this, artistSongArray);
 
@@ -37,7 +33,14 @@ public class SongActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                //TODO ADD CODE FOR NOW PLAYING
+                Intent nowPlayingIntent =
+                        new Intent(SongActivity.this,NowPlayingActivity.class);
+
+                nowPlayingIntent.putExtra("songName",artistSongArray.get(i).getSongName());
+                nowPlayingIntent.putExtra("artistName",artistSongArray.get(i).getArtist());
+                nowPlayingIntent.putExtra("songYear",artistSongArray.get(i).getSongYear());
+
+                startActivity(nowPlayingIntent);
             }
         });
 

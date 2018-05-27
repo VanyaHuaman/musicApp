@@ -2,7 +2,6 @@ package com.example.android.musicapp;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Artist implements Serializable{
 
