@@ -21,7 +21,7 @@ public class NowPlayingActivity extends AppCompatActivity {
     TextView mSongYearTextView;
     ImageView mPreviousImage;
     ImageView mNextImage;
-    Button mSongListButton;
+    TextView mSongListButton;
     Intent mReceivedIntent;
     int mTrackPosition;
 

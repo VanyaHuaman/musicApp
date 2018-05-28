@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:gravity="center_vertical"
         android:id="@+id/artistMenuTextView"
         android:background="@color/colorAccent"
         android:textColor="@color/colorText"
