@@ -17,7 +17,7 @@
     <LinearLayout
         android:id="@+id/musicInfoLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:orientation="vertical"
         android:gravity="center">
 
@@ -36,6 +36,43 @@
             tools:text="Song Year"
             style="@style/nowPlayingText" />
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/songButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+    <ImageView
+        android:id="@+id/previousTrackButton"
+        android:src="@drawable/previous"
+        android:layout_gravity="start"
+        android:scaleType="fitCenter"
+        android:layout_width="44dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="32dp"/>
+
+    <Button
+        android:id="@+id/songListButton"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@android:color/white"
+        android:textColor="@color/colorAccent"
+        android:text="Song\nList"/>
+
+    <ImageView
+        android:id="@+id/nextTrackButton"
+        android:src="@drawable/next"
+        android:layout_gravity="end"
+        android:scaleType="fitCenter"
+        android:layout_width="44dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="32dp"/>
 
     </LinearLayout>
 

@@ -11,19 +11,23 @@ import java.util.ArrayList;
 
 public class SongActivity extends AppCompatActivity {
 
+    public int mTrackPosition;
+    public Intent mReceivedIntent;
+    public ArrayList<Song> mArtistSongArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_list);
 
-        Intent receivedIntent = getIntent();
+        mReceivedIntent = getIntent();
 
-        @SuppressWarnings({"unchecked"})
-        final ArrayList<Song> artistSongArray = (ArrayList<Song>) receivedIntent.getSerializableExtra("array");
 
-        SongAdapter adapter = new SongAdapter(this, artistSongArray);
+        mArtistSongArray = (ArrayList<Song>) mReceivedIntent.getSerializableExtra("array");
 
-        ListView listView =(ListView)findViewById(R.id.list);
+        SongAdapter adapter = new SongAdapter(this, mArtistSongArray);
+
+        ListView listView =findViewById(R.id.list);
 
         listView.setAdapter(adapter);
 
@@ -31,12 +35,15 @@ public class SongActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+                mTrackPosition=i;
                 Intent nowPlayingIntent =
                         new Intent(SongActivity.this,NowPlayingActivity.class);
 
-                nowPlayingIntent.putExtra("songName",artistSongArray.get(i).getSongName());
-                nowPlayingIntent.putExtra("artistName",artistSongArray.get(i).getArtist());
-                nowPlayingIntent.putExtra("songYear",artistSongArray.get(i).getSongYear());
+                nowPlayingIntent.putExtra("songName",mArtistSongArray.get(mTrackPosition).getSongName());
+                nowPlayingIntent.putExtra("artistName",mArtistSongArray.get(mTrackPosition).getArtist());
+                nowPlayingIntent.putExtra("songYear",mArtistSongArray.get(mTrackPosition).getSongYear());
+                nowPlayingIntent.putExtra("array",mArtistSongArray);
+                nowPlayingIntent.putExtra("track",mTrackPosition);
 
                 startActivity(nowPlayingIntent);
             }

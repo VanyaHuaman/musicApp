@@ -17,16 +17,12 @@ public class Artist implements Serializable{
         return mArtistName;
     }
 
-    public void setArtistName(String artistName) {
-        mArtistName = artistName;
-    }
+
 
     public ArrayList<Song> getSongList() {
         return mSongList;
     }
 
-    public void setSongList(ArrayList<Song> songList) {
-        mSongList = songList;
-    }
+
 
 }

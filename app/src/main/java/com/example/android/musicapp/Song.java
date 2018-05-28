@@ -17,25 +17,19 @@ public class Song implements Serializable{
         return mSongName;
     }
 
-    public void setSongName(String songName) {
-        mSongName = songName;
-    }
+
 
     public String getArtist() {
         return mArtist;
     }
 
-    public void setArtist(String artist) {
-        mArtist = artist;
-    }
+
 
     public String getSongYear() {
         return mSongYear;
     }
 
-    public void setSongYear(String songYear) {
-        mSongYear = songYear;
-    }
+
 
 
 

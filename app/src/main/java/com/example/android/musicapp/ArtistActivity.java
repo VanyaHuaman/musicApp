@@ -30,7 +30,7 @@ public class ArtistActivity extends AppCompatActivity {
                 "It Was a Verry Good Year", "Summer Wind", "Luck Be A Lady", "That's Life",
                 "I Get A Kick Out Of You", "High Hopes", "The Lady Is A Tramp", "The Song Is You",
                 "I've Got a Crush on You", "My Kind Of Town", "Nancy", "All or Nothing at All",
-                "They Can't Take That Away from Me", "Someone To Watch Over Me", "Blue Moon",
+                "They Can't Take That\n     Away from Me", "Someone To Watch Over Me", "Blue Moon",
                 "Old Devil Moon", "That Old Black Magic");
 
         List<String> songYearArray = Arrays.asList("1969", "1964", "1979", "1956", "1964", "1967", "1967",
